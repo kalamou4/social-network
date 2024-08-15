@@ -1,0 +1,48 @@
+social-network/
+│
+├── backend/
+│   ├── cmd/
+│   │   └── server/
+│   │       └── main.go
+│   ├── internal/
+│   │   ├── auth/
+│   │   ├── user/
+│   │   ├── post/
+│   │   ├── group/
+│   │   ├── chat/
+│   │   └── notification/
+│   ├── pkg/
+│   │   ├── db/
+│   │   │   ├── migrations/
+│   │   │   │   └── sqlite/
+│   │   │   │       ├── 000001_create_users_table.up.sql
+│   │   │   │       ├── 000001_create_users_table.down.sql
+│   │   │   │       └── ...
+│   │   │   └── sqlite.go
+│   │   └── websocket/
+│   ├── api/
+│   │   └── routes.go
+│   ├── config/
+│   │   └── config.go
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── styles/
+│   │   └── App.js
+│   ├── package.json
+│   └── Dockerfile
+│
+├── caddy/
+│   └── Caddyfile
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+
+
+
