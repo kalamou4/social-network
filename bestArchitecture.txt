@@ -1,0 +1,69 @@
+social-network/
+│
+├── cmd/
+│   └── auth/
+│       └── main.go
+│
+├── internal/
+│   ├── auth/
+│   │   ├── service.go
+│   │   ├── handlers.go
+│   │   ├── repository.go
+│   │   └── models.go
+│   ├── user/
+│   │   ├── service.go
+│   │   ├── handlers.go
+│   │   ├── repository.go
+│   │   └── models.go
+│   ├── post/
+│   │   ├── service.go
+│   │   ├── handlers.go
+│   │   ├── repository.go
+│   │   └── models.go
+│   ├── group/
+│   │   ├── service.go
+│   │   ├── handlers.go
+│   │   ├── repository.go
+│   │   └── models.go
+│   ├── chat/
+│   │   ├── service.go
+│   │   ├── handlers.go
+│   │   ├── repository.go
+│   │   └── models.go
+│   ├── notification/
+│   │   ├── service.go
+│   │   ├── handlers.go
+│   │   ├── repository.go
+│   │   └── models.go
+│   ├── middleware/
+│   │   ├── auth_middleware.go
+│   │   └── session_middleware.go
+│   └── db/
+│       ├── migrations/
+│       │   ├── 000001_create_users_table.up.sql
+│       │   ├── 000001_create_users_table.down.sql
+│       │   ├── 000002_create_posts_table.up.sql
+│       │   ├── 000002_create_posts_table.down.sql
+│       │   └── ...
+│       └── sqlite/
+│           └── sqlite.go
+│
+├── pkg/
+│   ├── websocket/
+│   │   ├── hub.go
+│   │   └── client.go
+│   ├── utils/
+│   │   ├── hash.go
+│   │   └── validator.go
+│   └── config/
+│       └── config.go
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── public/
+│   ├── src/
+│   └── ...
+├── docker-compose.yml
+├── Dockerfile
+├── README.md
+└── .env

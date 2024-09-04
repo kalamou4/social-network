@@ -1,0 +1,64 @@
+cmd/ Directory:
+
+Contains the entry points for different services or executables. In this case, it holds the authentication service.
+cmd/auth/main.go:
+
+This file initializes the authentication service, sets up routes, and starts the HTTP server. It loads configuration, connects to the database, and initializes the internal/auth package.
+internal/ Directory:
+
+Contains the core logic of the application. Each subdirectory corresponds to a specific domain like auth, user, post, group, etc.
+internal/auth/ Directory:
+
+Handles all authentication-related business logic, including user registration, login, password hashing, and session management.
+
+Files:
+
+service.go: Contains business logic for authentication.
+handlers.go: Handles HTTP requests (e.g., login, register).
+repository.go: Handles database operations (e.g., saving users, retrieving user data).
+models.go: Contains data models related to authentication (e.g., User, Session).
+Other Subdirectories in internal/:
+
+Each directory (user, post, group, chat, notification) has similar structure:
+service.go: Core business logic for the module.
+handlers.go: HTTP handlers.
+repository.go: Database operations.
+models.go: Data models for the module.
+internal/middleware/ Directory:
+
+Contains reusable middleware functions.
+Files:
+
+auth_middleware.go: Ensures routes are accessed only by authenticated users.
+session_middleware.go: Handles session validation and management.
+internal/db/ Directory:
+
+Handles database connectivity and migrations.
+Files:
+
+migrations/: Contains SQL migration files to set up or modify the database schema.
+Example: 000001_create_users_table.up.sql and .down.sql handle creating and rolling back the users table.
+sqlite/: Contains the SQLite-specific connection logic in sqlite.go.
+pkg/ Directory:
+
+Contains reusable utilities and third-party packages used across the project.
+Subdirectories:
+
+websocket/: Handles WebSocket logic for real-time chat.
+hub.go: Manages connected clients and broadcasting messages.
+client.go: Handles each WebSocket client.
+utils/: Contains helper functions.
+hash.go: Handles password hashing with bcrypt.
+validator.go: Validates inputs like email formats, password strength, etc.
+config/: Loads and manages environment variables.
+config.go: Loads and parses .env file.
+frontend/ Directory:
+
+Contains the frontend code, typically React, Vue.js, or Next.js.
+Includes the Dockerfile for building the frontend container.
+Project Root:
+
+docker-compose.yml: Manages multi-container deployment for both frontend and backend services.
+Dockerfile: Contains Docker configuration for the backend service.
+.env: Stores environment variables for configurations like database connections.
+README.md: Documentation for setting up and running the project
