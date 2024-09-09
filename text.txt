@@ -1,0 +1,43 @@
+/social-network
+├── cmd
+│   └── server
+│       └── main.go           # Entry point for the application
+├── internal
+│   ├── api                   # API layer
+│   │   ├── handlers          # HTTP handlers for each service
+│   │   │   ├── user.go
+│   │   │   ├── post.go
+│   │   │   ├── group.go
+│   │   │   ├── chat.go
+│   │   │   └── notification.go
+│   │   └── routes.go         # Route definitions
+│   ├── services              # Business logic layer
+│   │   ├── user.go           # User service implementation
+│   │   ├── post.go           # Post service implementation
+│   │   ├── group.go          # Group service implementation
+│   │   ├── chat.go           # Chat service implementation
+│   │   └── notification.go   # Notification service implementation
+│   ├── repository            # Data access layer
+│   │   ├── sqlite            # SQLite specific implementation
+│   │   │   └── sqlite.go     # SQLite connection and queries
+│   │   └── repository.go     # Repository interface definitions
+│   ├── models                # Data models (structs you provided)
+│   │   └── models.go
+│   └── middleware            # Middleware (auth, logging, etc.)
+│       └── auth.go
+├── migrations                # Database migrations
+│   ├── 000001_create_users_table.up.sql
+│   ├── 000002_create_followers_table.up.sql
+│   ├── 000003_create_posts_table.up.sql
+│   └── ...
+├── pkg                       # Shared packages
+│   ├── auth
+│   │   └── jwt.go            # JWT token handling
+│   └── validator
+│       └── validator.go      # Input validation
+├── configs                   # Configuration files
+│   └── config.go
+├── web                       # Frontend (if applicable)
+├── Dockerfile
+├── docker-compose.yml
+└── README.md

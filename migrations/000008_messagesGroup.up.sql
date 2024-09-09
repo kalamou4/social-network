@@ -1,0 +1,7 @@
+CREATE TABLE group_messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER NOT NULL REFERENCES groups(id),
+    sender_id STRING NOT NULL REFERENCES users(id),
+    message TEXT NOT NULL,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
